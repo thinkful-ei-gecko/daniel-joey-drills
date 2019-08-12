@@ -20,5 +20,32 @@ function beyond(num) {
   }
 }
 
+let codedWords = 'craft block argon meter bells brown croon droop';
+
+
+function decode(string){
+  let array1 = string.split(' ');
+  let results = [];
+  for(let i=0; i < array1.length; i++){
+    if(array1[i][0]=== 'a'){
+      results.push(array1[i][1]);
+    }
+    else if(array1[i][0]=== 'b'){
+      results.push(array1[i][2]);
+    }
+    else if(array1[i][0] === 'c'){
+      results.push(array1[i][3]);
+    }
+    else if(array1[i][0] === 'd'){
+      results.push(array1[i][4]);
+    }
+    else{ results.push(' ');}
+
+  }
+  return results.join('');
+}
+
+decode(codedWords);
+
 
 
