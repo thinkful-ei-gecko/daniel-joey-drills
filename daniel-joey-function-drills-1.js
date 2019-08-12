@@ -5,14 +5,14 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting(name, age){
-  if (typeof age !== Number){
-    throw new TypeError('Needs to be a number')
-  }
-  if(typeof name !== String){
-    throw new TypeError('needs to be letters')
-  }
   if (name === undefined || age === undefined) {
     throw new Error ('Arguments not Valid');
+  }
+  if (typeof(age) !== 'number'){
+    throw new TypeError('Needs to be a number')
+  }
+  if(typeof(name) !== 'string'){
+    throw new TypeError('needs to be letters')
   }
   if(age < 0){
     throw new Error('Age can not be negative');}
