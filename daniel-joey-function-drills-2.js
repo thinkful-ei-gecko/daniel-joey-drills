@@ -13,12 +13,14 @@ function beyond(num) {
     console.log('To infinity');
   }
   if (num < 0 && num > -Infinity) {
-    console.log('To negative infinity')
+    console.log('To negative infinity');
   }
   if (num === 0){
     console.log('Staying home');
   }
 }
+
+beyond(2)
 
 let codedWords = 'craft block argon meter bells brown croon droop';
 
@@ -48,4 +50,64 @@ function decode(string){
 decode(codedWords);
 
 
+function daysInMonth(month, leapYear = false){
+  let result;
+  switch(month) {
+  case 'january':
+    result = `${month} has 31 days`;
+    break;
 
+  case 'march':
+    result = `${month} has 31 days`;
+    break;
+
+  case 'april':
+    result = `${month} has 30 days`;
+    break;
+
+  case 'may':
+    result = `${month} has 31 days`;
+    break;
+
+  case 'june':
+    result = `${month} has 30 days`;
+    break;
+
+  case 'july':
+    result = `${month} has 31 days`;
+    break;
+  
+  case 'august':
+    result = `${month} has 31 days`;
+    break;
+
+  case 'september':
+    result = `${month} has 30 days`;
+    break;
+
+  case 'october':
+    result = `${month} has 31 days`;
+    break;
+
+  case 'november':
+    result = `${month} has 30 days`;
+    break;
+
+  case 'december':
+    result = `${month} has 31 days`;
+    break;
+
+  case 'february':
+    result = `${month} has 28 days`;
+    if (leapYear === true) {
+      result = `${month} has 29 days`;
+    }
+    break;
+
+  default: 
+    console.log('Thats not a month');
+  }
+  return result;
+}
+
+daysInMonth('march');
