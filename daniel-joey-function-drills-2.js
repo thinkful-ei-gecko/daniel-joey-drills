@@ -54,11 +54,11 @@ function daysInMonth(month, leapYear = false){
   let result;
   switch(month) {
   case 'january':
-    result = `${month} has 31 days`;
+    result = 'January has 31 days';
     break;
 
   case 'march':
-    result = `${month} has 31 days`;
+    result =  `${month} has 31 days`;
     break;
 
   case 'april':
@@ -66,7 +66,7 @@ function daysInMonth(month, leapYear = false){
     break;
 
   case 'may':
-    result = `${month} has 31 days`;
+    result =  `${month} has 31 days`;
     break;
 
   case 'june':
@@ -105,9 +105,32 @@ function daysInMonth(month, leapYear = false){
     break;
 
   default: 
-    console.log('Thats not a month');
+    throw new Error('must provide valid month');
   }
   return result;
 }
 
-daysInMonth('march');
+
+function rockPaperScissors(num) {
+  // 1 = rock, 2 = paper, 3 = scissors
+  if (num > 3 || num < 1) {
+    throw new Error ('choose a valid number');
+  }
+  let choice = Math.floor(Math.random()*3) + 1;
+  if (choice === num) {
+    return 'draw';
+  }
+  if (choice === 1 && num === 2) {
+    return 'You win';
+  }
+  if (choice === 2 && num === 3) {
+    return 'You win';
+  } 
+  if (choice === 3 && num === 1) {
+    return 'You win';
+  }
+  return 'You lose';
+}
+
+rockPaperScissors(1);
+
