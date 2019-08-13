@@ -1,9 +1,15 @@
 'use strict';
+// JediName returns the first three characters in lastName and joins
+// it with the first two characters in firstName
 
 function jediName(firstName, lastName){
   return lastName.substring(0,3) + firstName.substring(0,2);
 }
-jediName('joseph', 'romo');
+console.log(jediName('joseph', 'romo'));
+
+
+// Beyond takes an argument (num) and returns a string
+//based on it's value
 
 function beyond(num) {
   if (num === Infinity || num === -Infinity) {
@@ -20,10 +26,16 @@ function beyond(num) {
   }
 }
 
-beyond(2)
+console.log(beyond(2));
+
+
+
+//decode takes a sentence, splits the words into an array,
+//and then pulls a character from each word based on the first 
+//character in the word and pushes it to an array
+//It then joins this array of characters to form the secret message.
 
 let codedWords = 'craft block argon meter bells brown croon droop';
-
 
 function decode(string){
   let array1 = string.split(' ');
@@ -47,54 +59,29 @@ function decode(string){
   return results.join('');
 }
 
-decode(codedWords);
+console.log(decode(codedWords));
 
+//daysInMonth takes two arguments (month and leapYear(false by default))
+//and returns a string that tells the number of days in the month.
 
 function daysInMonth(month, leapYear = false){
   let result;
   switch(month) {
   case 'january':
-    result = 'January has 31 days';
-    break;
-
   case 'march':
-    result =  `${month} has 31 days`;
+  case 'may' :
+  case 'july':
+  case 'august' :
+  case 'october':
+  case 'december':
+    result = `${month} has 31 days.`;
     break;
 
   case 'april':
-    result = `${month} has 30 days`;
-    break;
-
-  case 'may':
-    result =  `${month} has 31 days`;
-    break;
-
-  case 'june':
-    result = `${month} has 30 days`;
-    break;
-
-  case 'july':
-    result = `${month} has 31 days`;
-    break;
-  
-  case 'august':
-    result = `${month} has 31 days`;
-    break;
-
+  case 'june' :
   case 'september':
-    result = `${month} has 30 days`;
-    break;
-
-  case 'october':
-    result = `${month} has 31 days`;
-    break;
-
   case 'november':
     result = `${month} has 30 days`;
-    break;
-
-  case 'december':
-    result = `${month} has 31 days`;
     break;
 
   case 'february':
@@ -110,7 +97,12 @@ function daysInMonth(month, leapYear = false){
   return result;
 }
 
+console.log(daysInMonth('september', true));
 
+//rockPaperScissors takes one argument(num) between one
+//and three, and compares it to a randomly chosen value 
+//between one and three (rock, paper, or scissors). If win
+//conditions are met, the user is congratulated; else, they lose/draw.
 function rockPaperScissors(num) {
   // 1 = rock, 2 = paper, 3 = scissors
   if (num > 3 || num < 1) {
@@ -132,5 +124,5 @@ function rockPaperScissors(num) {
   return 'You lose';
 }
 
-rockPaperScissors(1);
+console.log(rockPaperScissors(1));
 
